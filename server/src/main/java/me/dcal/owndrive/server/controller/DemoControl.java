@@ -8,6 +8,7 @@ import org.springframework.http.HttpHeaders;
 import org.springframework.http.MediaType;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 import org.springframework.web.multipart.commons.CommonsMultipartFile;
 import org.springframework.web.servlet.ModelAndView;
 
@@ -36,23 +37,22 @@ public class DemoControl {
         return new FileSystemResource(new File("src/main/resources/file/public/"+filename));
     }
 
-    @PostMapping("/file/savePublicFile/{file}")
-    public String savePublicFile(@RequestParam("file") CommonsMultipartFile file) {
+    @PostMapping("/file/savePublicFile/{filename}")
+    public String savePublicFile(@RequestParam("file") MultipartFile file, @PathVariable("filename") String filename) {
         String path="src/main/resources/file/public/";
 //                session.getServletContext().getRealPath("/");
 
-        System.out.println(path+" "+"filename.txt");
         try{
             byte barr[]=file.getBytes();
 
             BufferedOutputStream bout=new BufferedOutputStream(
-                    new FileOutputStream(path+"/"+"filename.txt"));
+                    new FileOutputStream(path+"/"+filename));
             bout.write(barr);
             bout.flush();
             bout.close();
 
         }catch(Exception e){System.out.println(e);}
-        return "okay";
+        return "okay\n";
 
     }
     //@RequestParam("image") String image
