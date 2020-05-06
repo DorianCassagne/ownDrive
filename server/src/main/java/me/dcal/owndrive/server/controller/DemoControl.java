@@ -20,8 +20,12 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 
+import java.util.concurrent.atomic.AtomicLong;
+
 @RestController
 public class DemoControl {
+
+    private AtomicLong counter = new AtomicLong();
 
     @GetMapping("/demo")
     public DemoResource getDemoResource() {
@@ -33,22 +37,23 @@ public class DemoControl {
     }
 
     @PostMapping("/file/savePublicFile/{file}")
-    public String savePublicFile(@PathVariable("file")String filename, CommonsMultipartFile file) {
+    public String savePublicFile(@RequestParam("file") CommonsMultipartFile file) {
         String path="src/main/resources/file/public/";
 //                session.getServletContext().getRealPath("/");
 
-        System.out.println(path+" "+filename);
+        System.out.println(path+" "+"filename.txt");
         try{
             byte barr[]=file.getBytes();
 
             BufferedOutputStream bout=new BufferedOutputStream(
-                    new FileOutputStream(path+"/"+filename));
+                    new FileOutputStream(path+"/"+"filename.txt"));
             bout.write(barr);
             bout.flush();
             bout.close();
 
         }catch(Exception e){System.out.println(e);}
         return "okay";
+
     }
     //@RequestParam("image") String image
 
