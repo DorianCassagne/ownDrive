@@ -8,7 +8,7 @@ import java.util.Collection;
 
 
 
-@Entity(name = "DATA")
+@Entity(name = "data")
 @Table(name="data")
 public class Data {
     @Id

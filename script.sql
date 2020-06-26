@@ -3,7 +3,7 @@
 ------------------------------------------------------------
 
 
-drop schema if exists project;
+drop schema if exists project cascade;
 CREATE schema project;
 ------------------------------------------------------------
 -- Table: user
