@@ -26,6 +26,20 @@ public class DemoControl {
         return new FileSystemResource(new File("server/src/main/resources/file/public/"+filename));
     }
 
+    @PostMapping("/file/renamePublicFile/{filename}")
+    public String renamePublicFile(@RequestParam("newfilename") String newfilename,@RequestParam("old") String old, @PathVariable("filename") String filename) {
+        String path="server/src/main/resources/file/public/";
+//                session.getServletContext().getRealPath("/");
+
+        try{
+
+            new File(path+"/"+old).renameTo(new File(path+"/"+newfilename));
+
+        }catch(Exception e){System.out.println(e);}
+        return "okay\n";
+
+    }
+
     @PostMapping("/file/savePublicFile/{filename}")
     public String savePublicFile(@RequestParam("file") MultipartFile file, @PathVariable("filename") String filename) {
         String path="server/src/main/resources/file/public/";

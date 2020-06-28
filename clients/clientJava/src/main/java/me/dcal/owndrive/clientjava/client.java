@@ -41,6 +41,29 @@ public class client {
 
     }
 
+    public void rename(String newfile, String old){
+
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.MULTIPART_FORM_DATA);
+        MultiValueMap<String, Object> body
+                = new LinkedMultiValueMap<>();
+        //body.add("file", new FileSystemResource(new File("/Users/gregoryarnal/Downloads/palmiers.jpeg")));
+        body.add("newfilename", newfile);
+        body.add("old", old);
+
+        HttpEntity<MultiValueMap<String, Object>> requestEntity
+                = new HttpEntity<>(body, headers);
+        //String fileName = old.getAbsolutePath().substring(old.getAbsolutePath().lastIndexOf(File.separatorChar) + 1, old.getAbsolutePath().length());
+        String filename = old;
+        String serverUrl = "http://127.0.0.1:8080//file/renamePublicFile/" + filename;
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> response = restTemplate
+                .postForEntity(serverUrl, requestEntity, String.class);
+
+    }
+
+
     public static Path download(String filePath){
         try{
             String  sourceURL ="http://127.0.0.1:8080/file/getPublicFile/" + filePath;
@@ -59,10 +82,11 @@ public class client {
         return null;
     }
 
-    public static void consult(){
+    public static String consult(String filename){
         URLConnection urlconnection = null;
         try{
-            String  sourceURL ="http://127.0.0.1:8080/file/getPublicFile/macron.txt";
+            String result = "";
+            String  sourceURL ="http://127.0.0.1:8080/file/getPublicFile/" + filename;
             URL url = new URL(sourceURL);
             urlconnection = url.openConnection();
             urlconnection.setDoInput(true);
@@ -77,14 +101,15 @@ public class client {
                     urlconnection.getInputStream();
             int n;
             while (-1 != (n = source_stream.read())) {
-                System.out.print((char)n);
+                //System.out.print((char)n);
+                result +=(char)n;
             }
-
+            return result;
         } catch (IOException e) {
             System.out.println("e :" + e);
             e.printStackTrace();
         }
-
+        return null;
     }
 
     public static File[] get_file() throws IOException {
