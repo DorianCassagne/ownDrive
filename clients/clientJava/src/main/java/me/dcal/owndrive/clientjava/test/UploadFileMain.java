@@ -2,10 +2,19 @@ package me.dcal.owndrive.clientjava.test;
 
 import org.apache.tomcat.util.http.fileupload.FileUtils;
 
+import org.springframework.core.io.FileSystemResource;
+import org.springframework.http.HttpEntity;
+import org.springframework.http.MediaType;
+import org.springframework.http.ResponseEntity;
+import org.springframework.util.LinkedMultiValueMap;
+import org.springframework.util.MultiValueMap;
+import org.springframework.web.client.RestTemplate;
+
 import java.io.*;
-import java.net.HttpURLConnection;
-import java.net.URL;
-import java.net.URLConnection;
+import java.net.*;
+import org.springframework.http.HttpHeaders;
+
+import java.nio.charset.Charset;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.StandardCopyOption;
@@ -61,7 +70,6 @@ public class UploadFileMain {
             URL url = new URL("http://127.0.0.1:8888/upload//test.txt");
             urlconnection = url.openConnection();
             urlconnection.setDoOutput(true);
-            urlconnection.setDoInput(true);
             urlconnection.setUseCaches(false);
             if (urlconnection instanceof HttpURLConnection) {
                 ((HttpURLConnection) urlconnection).setRequestMethod("POST");
@@ -175,12 +183,104 @@ public class UploadFileMain {
         }
         return null;
     }
-    
-    public static void main(String[] args) {
-        String sourceURL ="http://127.0.0.1:8888//upload//test.py";
-        String targetDirectory = "/Users/gregoryarnal/Downloads/";
-        //test3();
-        System.out.println("e :" + download(sourceURL,targetDirectory ));
+
+
+    public static String callURL(String myURL) {
+        System.out.println("Requeted URL:" + myURL);
+        StringBuilder sb = new StringBuilder();
+        URLConnection urlConn = null;
+        InputStreamReader in = null;
+        try {
+            URL url = new URL(myURL);
+            urlConn = url.openConnection();
+            if (urlConn != null)
+                urlConn.setReadTimeout(60 * 1000);
+            if (urlConn != null && urlConn.getInputStream() != null) {
+                in = new InputStreamReader(urlConn.getInputStream(),
+                        Charset.defaultCharset());
+                BufferedReader bufferedReader = new BufferedReader(in);
+                if (bufferedReader != null) {
+                    int cp;
+                    while ((cp = bufferedReader.read()) != -1) {
+                        sb.append((char) cp);
+                    }
+                    bufferedReader.close();
+                }
+            }
+            in.close();
+        } catch (Exception e) {
+            throw new RuntimeException("Exception while calling URL:"+ myURL, e);
+        }
+
+        return sb.toString();
+    }
+
+
+
+    public static Path upload(String targetDirectory, String sourceURL){
+        try{
+            //String sourceURL ="http://127.0.0.1:8888//upload//test.py";
+            //String targetDirectory = "/Users/gregoryarnal/Downloads/";
+            URL url = new URL(targetDirectory);
+            String fileName = sourceURL.substring(sourceURL.lastIndexOf('/') + 1, sourceURL.length());
+            Path sourcePath = new File(targetDirectory + File.separator + fileName).toPath();
+            Files.copy(url.openStream(), sourcePath, StandardCopyOption.REPLACE_EXISTING);
+
+            return sourcePath;
+        } catch (IOException e) {
+            System.out.println("e :" + e);
+            e.printStackTrace();
+        }
+        return null;
+    }
+
+    public static void testRest() throws IOException {
+        URL url = new URL("http://localhost:8888//file/savePublicFile/");
+        HttpURLConnection conn = (HttpURLConnection) url.openConnection();
+        conn.setRequestMethod("POST");
+        conn.setRequestProperty("Accept", "application/json");
+        if (conn.getResponseCode() != 200) {
+            throw new RuntimeException("Failed : HTTP Error code : "
+                    + conn.getResponseCode());
+        }
+        InputStreamReader in = new InputStreamReader(conn.getInputStream());
+        BufferedReader br = new BufferedReader(in);
+        String output;
+
+        while ((output = br.readLine()) != null) {
+            System.out.println(output);
+        }
+        conn.disconnect();
+    }
+
+    public static void test666(){
+        HttpHeaders headers = new HttpHeaders();
+        headers.setContentType(MediaType.MULTIPART_FORM_DATA);
+        MultiValueMap<String, Object> body
+                = new LinkedMultiValueMap<>();
+        body.add("file", new FileSystemResource(new File("/Users/gregoryarnal/Downloads/test.txt")));
+        HttpEntity<MultiValueMap<String, Object>> requestEntity
+                = new HttpEntity<>(body, headers);
+
+        String serverUrl = "http://127.0.0.1:8080//file/savePublicFile/test.txt";
+
+        RestTemplate restTemplate = new RestTemplate();
+        ResponseEntity<String> response = restTemplate
+                .postForEntity(serverUrl, requestEntity, String.class);
+    }
+    public static void main(String[] args) throws IOException {
+        String  sourceURL ="http://127.0.0.1:8080//file/getPublicFile/macron.txt";
+        String targetDirectory = "/Users/gregoryarnal/Downloads";
+
+        String  sourceURLup ="/Users/gregoryarnal/Downloads/test.txt";
+        String targetDirectoryup = "http://127.0.0.1:8888//upload/";
+        //testRest();
+        test666();
+        //System.out.println("download :" + download(sourceURL,targetDirectory ));
+        //System.out.println("upload :" + upload(targetDirectoryup, sourceURLup ));
+
+        System.out.println("\nOutput: \n" + callURL("http://127.0.0.1:8080/filename"));
+
     }
 
 }

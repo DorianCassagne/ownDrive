@@ -1,25 +1,12 @@
 package me.dcal.owndrive.server.controller;
 
-import me.dcal.owndrive.server.model.DemoResource;
-import org.springframework.core.io.ByteArrayResource;
 import org.springframework.core.io.FileSystemResource;
-import org.springframework.core.io.Resource;
-import org.springframework.http.HttpHeaders;
-import org.springframework.http.MediaType;
-import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.multipart.MultipartFile;
-import org.springframework.web.multipart.commons.CommonsMultipartFile;
-import org.springframework.web.servlet.ModelAndView;
 
-import javax.servlet.http.HttpSession;
 import java.io.BufferedOutputStream;
 import java.io.File;
 import java.io.FileOutputStream;
-import java.io.IOException;
-import java.nio.file.Files;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -28,18 +15,20 @@ public class DemoControl {
 
     private AtomicLong counter = new AtomicLong();
 
-    @GetMapping("/demo")
-    public DemoResource getDemoResource() {
-        return new DemoResource(3,"test");
+    @GetMapping("/filename")
+    public File[] filename() {
+        File repertoire = new File("server/src/main/resources/file/public/");
+
+        return repertoire.listFiles();
     }
     @GetMapping("/file/getPublicFile/{file}")
     public FileSystemResource getPublicFile(@PathVariable("file") String filename) {
-        return new FileSystemResource(new File("src/main/resources/file/public/"+filename));
+        return new FileSystemResource(new File("server/src/main/resources/file/public/"+filename));
     }
 
     @PostMapping("/file/savePublicFile/{filename}")
     public String savePublicFile(@RequestParam("file") MultipartFile file, @PathVariable("filename") String filename) {
-        String path="src/main/resources/file/public/";
+        String path="server/src/main/resources/file/public/";
 //                session.getServletContext().getRealPath("/");
 
         try{
@@ -55,6 +44,31 @@ public class DemoControl {
         return "okay\n";
 
     }
+
+    @PostMapping("/file/savePublicPictures/{filename}")
+    public String savePublicPictures(@RequestParam("file") MultipartFile file, @PathVariable("filename") String filename) {
+        String path="server/src/main/resources/image/";
+//                session.getServletContext().getRealPath("/");
+
+        try{
+            byte barr[]=file.getBytes();
+
+            BufferedOutputStream bout=new BufferedOutputStream(
+                    new FileOutputStream(path+"/"+filename));
+            bout.write(barr);
+            bout.flush();
+            bout.close();
+
+        }catch(Exception e){System.out.println(e);}
+        return "okay\n";
+
+    }
+
+    @GetMapping("/file/getPublicPictures/{file}")
+    public FileSystemResource getPublicPictures(@PathVariable("file") String filename) {
+        return new FileSystemResource(new File("server/src/main/resources/image/"+filename));
+    }
+
     //@RequestParam("image") String image
 
 
