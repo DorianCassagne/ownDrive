@@ -32,7 +32,7 @@ public class client {
 
         HttpEntity<MultiValueMap<String, Object>> requestEntity
                 = new HttpEntity<>(body, headers);
-        String fileName = file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf('/') + 1, file.getAbsolutePath().length());
+        String fileName = file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf(File.separatorChar) + 1, file.getAbsolutePath().length());
         String serverUrl = "http://127.0.0.1:8080//file/savePublicFile/" + fileName;
 
         RestTemplate restTemplate = new RestTemplate();
@@ -41,12 +41,13 @@ public class client {
 
     }
 
-    public static Path download(String filename){
+    public static Path download(String filePath){
         try{
-            String  sourceURL ="http://127.0.0.1:8080/file/getPublicFile/" + filename;
-            String targetDirectory = "/Users/gregoryarnal/Downloads";
+            String  sourceURL ="http://127.0.0.1:8080/file/getPublicFile/" + filePath;
+            String targetDirectory = System.getProperty("user.home") + File.separator + "Downloads";
             URL url = new URL(sourceURL);
-            String fileName = sourceURL.substring(sourceURL.lastIndexOf('/') + 1, sourceURL.length());
+            String fileName = sourceURL.substring(sourceURL.lastIndexOf(File.separatorChar) + 1, sourceURL.length());
+            System.out.println(fileName);
             Path targetPath = new File(targetDirectory + File.separator + fileName).toPath();
             Files.copy(url.openStream(), targetPath, StandardCopyOption.REPLACE_EXISTING);
 

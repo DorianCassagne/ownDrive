@@ -6,6 +6,7 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.util.ArrayList;
+import java.util.List;
 
 public class GUIProgram extends JFrame {
 
@@ -31,30 +32,13 @@ public class GUIProgram extends JFrame {
         JPanel paneloffile = new JPanel(); // the panel is not visible in output
         //JTextField tf = new JTextField(10); // accepts upto 10 characters
 
+        List<String> files = update_file_list(main);
+        liste = new JList(files.toArray());
 
-        String repertoire = main.callURL("http://127.0.0.1:8080/filename");
-        String []files = repertoire.substring(1,repertoire.length()-1).split(",");
-
-        String []name_file = new String[10];
-        int i =0 ;
-        File [] tabFiles = new File[10];
-        for (String strfile : files){
-            File file= new File(strfile.substring(1, strfile.length()-1));
-            String fileName = file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf('/') + 1, file.getAbsolutePath().length());
-            name_file[i] = fileName;
-            tabFiles[i] = file;
-            i++;
-        }
-        liste = new JList(update_file_list(main));
-
-        liste.addListSelectionListener(new javax.swing.event.ListSelectionListener () {
-                                           public void valueChanged (javax.swing.event.ListSelectionEvent evt) {
-                                               System.out.println("\nOutput: \n" + liste.getSelectedValue());
-                                               main.download(liste.getSelectedValue()+"");
-
-                                           }
-                                       }
-        );
+        liste.addListSelectionListener(evt -> {
+            System.out.println("\nOutput: \n" + liste.getSelectedValue());
+            main.download(liste.getSelectedValue()+"");
+        });
 
         m11.addActionListener(new ActionListener(){
             @Override
@@ -64,10 +48,10 @@ public class GUIProgram extends JFrame {
                 main.upload(fc.getSelectedFile());
                 DefaultListModel listModel = (DefaultListModel)liste.getModel();
                 listModel.clear();
-                String []file = update_file_list(main);
-                for(int i=0; i< file.length; i++)
+                List<String> file = update_file_list(main);
+                for(String fileName : file)
                 {
-                    listModel.addElement((String)file[i]);
+                    listModel.addElement(fileName);
 
                 }
             }
@@ -80,18 +64,16 @@ public class GUIProgram extends JFrame {
         this.setVisible(true);
     }
 
-    public static String[] update_file_list(client main){
+    public static List<String> update_file_list(client main){
         String repertoire = main.callURL("http://127.0.0.1:8080/filename");
         String []files = repertoire.substring(1,repertoire.length()-1).split(",");
 
-        String []name_file = new String[10];
+        ArrayList<String> name_file = new ArrayList<>();
         int i =0 ;
-        File [] tabFiles = new File[10];
         for (String strfile : files){
             File file= new File(strfile.substring(1, strfile.length()-1));
             String fileName = file.getAbsolutePath().substring(file.getAbsolutePath().lastIndexOf('/') + 1, file.getAbsolutePath().length());
-            name_file[i] = fileName;
-            tabFiles[i] = file;
+            name_file.add(fileName);
             i++;
         }
         return name_file;
