@@ -69,6 +69,13 @@ public class DemoControl {
         return new FileSystemResource(new File("server/src/main/resources/image/"+filename));
     }
 
+    @PostMapping("/login")
+    public String savePublicPictures(@RequestParam("user") String user, @PathVariable("password") String password) {
+
+        return "okay\n";
+
+    }
+
     //@RequestParam("image") String image
 
 

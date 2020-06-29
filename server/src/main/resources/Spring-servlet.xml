@@ -16,6 +16,7 @@
         </bean>
 
 
-        <bean id="datarepository" class="me.dcal.owndrive.database.repository.DataRepository" abstract="true"/>
+    <bean id="DataRepository" class="me.dcal.owndrive.database.repository.DataRepository" abstract="true"/>
+    <bean id="UserRepository" class="me.dcal.owndrive.database.repository.UserRepository" abstract="true"/>
 
 </beans>

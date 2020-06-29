@@ -13,6 +13,8 @@ import java.util.Set;
 public class User {
     @Id
     private String username;
+    @Column
+    private String password;
 
     @ManyToMany(mappedBy="mesUsers")
     Set<Data> data;
@@ -29,6 +31,10 @@ public class User {
         this.username = user.getUsername();
         this.data = new HashSet<Data>();
     }
+
+    public String getPassword() { return password; }
+
+    public void setPassword(String password) { this.password = password; }
 
     public String getUsername() {
         return username;
