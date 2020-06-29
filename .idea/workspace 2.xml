@@ -1,0 +1,321 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="5c0efb6d-08c8-43c5-b5af-c72b0e1d77b4" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/clients/ClientGUIJava/src/main/resources/archetype-resources/src/main/java/App 2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/ClientGUIJava/src/main/resources/archetype-resources/src/main/java/SystemInfo 2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/clients/ClientGUIJava/src/main/resources/archetype-resources/src/main/java/module-info 2.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/file/public/notes.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/server/src/main/resources/file/public/testtest.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/server/src/main/resources/file/public/test.txt" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="database" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectId" id="1dOUvUM4cR5Pm8Baq1w0NPq3Xjf" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="ASKED_SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="DatabaseDriversLRU" value="postgresql" />
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="SDKs" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
+    <property name="restartRequiresConfirmation" value="false" />
+    <property name="settings.editor.selected.configurable" value="preferences.keymap" />
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="SpringBootApplicationConfigurationType" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="Spring Boot.ServerApplication">
+    <configuration name="FullscreenJFrame" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.dcal.owndrive.clientjava.FullscreenJFrame" />
+      <module name="clientjava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.dcal.owndrive.clientjava.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="GUIProgram" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.dcal.owndrive.clientjava.GUIProgram" />
+      <module name="clientjava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.dcal.owndrive.clientjava.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="UploadFileMain" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.dcal.owndrive.clientjava.test.UploadFileMain" />
+      <module name="clientjava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.dcal.owndrive.clientjava.test.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="client" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.dcal.owndrive.clientjava.client" />
+      <module name="clientjava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.dcal.owndrive.clientjava.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="modele" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="me.dcal.owndrive.clientjava.modele" />
+      <module name="clientjava" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="me.dcal.owndrive.clientjava.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ClientjavaApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="clientjava" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="me.dcal.owndrive.clientjava.ClientjavaApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="ServerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="spring-boot-data-jpa" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="me.dcal.owndrive.server.ServerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Application.UploadFileMain" />
+        <item itemvalue="Application.modele" />
+        <item itemvalue="Application.GUIProgram" />
+        <item itemvalue="Application.FullscreenJFrame" />
+        <item itemvalue="Application.client" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="5c0efb6d-08c8-43c5-b5af-c72b0e1d77b4" name="Default Changelist" comment="" />
+      <created>1592295863584</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1592295863584</updated>
+      <workItem from="1592295866131" duration="6897000" />
+      <workItem from="1592394799737" duration="2006000" />
+      <workItem from="1592558187612" duration="804000" />
+      <workItem from="1593070068650" duration="20548000" />
+      <workItem from="1593268251661" duration="3520000" />
+      <workItem from="1593272112997" duration="378000" />
+      <workItem from="1593272542645" duration="9399000" />
+      <workItem from="1593294913533" duration="11831000" />
+      <workItem from="1593380316143" duration="890000" />
+      <workItem from="1593381342666" duration="6451000" />
+      <workItem from="1593447495272" duration="799000" />
+      <workItem from="1593460765963" duration="184000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="560" y="265" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1593073939895">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="560" y="265" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1593073939895" />
+    <state x="773" y="313" key="#com.intellij.ide.util.MemberChooser" timestamp="1593298712918">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="773" y="313" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1200@0.0.1920.1200" timestamp="1593298712918" />
+    <state x="648" y="343" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog" timestamp="1592558137880">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="648" y="343" key="#com.intellij.openapi.updateSettings.impl.PluginUpdateInfoDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1592558137880" />
+    <state x="493" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog" timestamp="1593291561270">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="493" y="0" key="#com.intellij.refactoring.rename.AutomaticRenamingDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1593291561270" />
+    <state x="646" y="272" key="#script.sql" timestamp="1593072008314">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="646" y="272" key="#script.sql/0.0.1920.1200@0.0.1920.1200" timestamp="1593072008314" />
+    <state x="384" y="0" key="DiffContextDialog" timestamp="1593460935518">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="384" y="0" key="DiffContextDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1593460935518" />
+    <state width="1505" height="344" key="GridCell.Tab.0.bottom" timestamp="1593449295516">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1505" height="344" key="GridCell.Tab.0.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1593449295516" />
+    <state width="1361" height="424" key="GridCell.Tab.0.bottom/0.23.1920.1136@0.23.1920.1136" timestamp="1593388164234" />
+    <state width="1505" height="344" key="GridCell.Tab.0.center" timestamp="1593449295515">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1505" height="344" key="GridCell.Tab.0.center/0.0.1920.1200@0.0.1920.1200" timestamp="1593449295515" />
+    <state width="1361" height="424" key="GridCell.Tab.0.center/0.23.1920.1136@0.23.1920.1136" timestamp="1593388164233" />
+    <state width="1505" height="344" key="GridCell.Tab.0.left" timestamp="1593449295515">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1505" height="344" key="GridCell.Tab.0.left/0.0.1920.1200@0.0.1920.1200" timestamp="1593449295515" />
+    <state width="1361" height="424" key="GridCell.Tab.0.left/0.23.1920.1136@0.23.1920.1136" timestamp="1593388164232" />
+    <state width="1505" height="344" key="GridCell.Tab.0.right" timestamp="1593449295516">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1505" height="344" key="GridCell.Tab.0.right/0.0.1920.1200@0.0.1920.1200" timestamp="1593449295516" />
+    <state width="1361" height="424" key="GridCell.Tab.0.right/0.23.1920.1136@0.23.1920.1136" timestamp="1593388164234" />
+    <state width="1360" height="424" key="GridCell.Tab.1.bottom" timestamp="1593449295508">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1360" height="424" key="GridCell.Tab.1.bottom/0.0.1920.1200@0.0.1920.1200" timestamp="1593449295508" />
+    <state width="1361" height="424" key="GridCell.Tab.1.bottom/0.23.1920.1136@0.23.1920.1136" timestamp="1593388164237" />
+    <state width="1360" height="424" key="GridCell.Tab.1.center" timestamp="1593449295508">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1360" height="424" key="GridCell.Tab.1.center/0.0.1920.1200@0.0.1920.1200" timestamp="1593449295508" />
+    <state width="1361" height="424" key="GridCell.Tab.1.center/0.23.1920.1136@0.23.1920.1136" timestamp="1593388164236" />
+    <state width="1360" height="424" key="GridCell.Tab.1.left" timestamp="1593449295507">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1360" height="424" key="GridCell.Tab.1.left/0.0.1920.1200@0.0.1920.1200" timestamp="1593449295507" />
+    <state width="1361" height="424" key="GridCell.Tab.1.left/0.23.1920.1136@0.23.1920.1136" timestamp="1593388164235" />
+    <state width="1360" height="424" key="GridCell.Tab.1.right" timestamp="1593449295508">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="1360" height="424" key="GridCell.Tab.1.right/0.0.1920.1200@0.0.1920.1200" timestamp="1593449295508" />
+    <state width="1361" height="424" key="GridCell.Tab.1.right/0.23.1920.1136@0.23.1920.1136" timestamp="1593388164236" />
+    <state width="243" height="457" key="HiddenNamespacesPopup" timestamp="1593073741229">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state width="243" height="457" key="HiddenNamespacesPopup/0.0.1920.1200@0.0.1920.1200" timestamp="1593073741229" />
+    <state x="461" y="239" key="SettingsEditor" timestamp="1593275173027">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="461" y="239" key="SettingsEditor/0.0.1920.1200@0.0.1920.1200" timestamp="1593275173027" />
+    <state x="862" y="467" key="com.intellij.database.actions.DdlActions$CreateObject$1" timestamp="1593073282963">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="862" y="467" key="com.intellij.database.actions.DdlActions$CreateObject$1/0.0.1920.1200@0.0.1920.1200" timestamp="1593073282963" />
+    <state x="502" y="336" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2" timestamp="1593295271672">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="502" y="336" key="com.intellij.xdebugger.impl.breakpoints.ui.BreakpointsDialogFactory$2/0.0.1920.1200@0.0.1920.1200" timestamp="1593295271672" />
+    <state x="1206" y="136" key="git4idea.branch.GitSmartOperationDialog" timestamp="1593460943409">
+      <screen x="0" y="0" width="1920" height="1200" />
+    </state>
+    <state x="1206" y="136" key="git4idea.branch.GitSmartOperationDialog/0.0.1920.1200@0.0.1920.1200" timestamp="1593460943409" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/clients/clientJava/src/main/java/me/dcal/owndrive/clientjava/test/UploadFileMain.java</url>
+          <line>125</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/clients/clientJava/src/main/java/me/dcal/owndrive/clientjava/test/UploadFileMain.java</url>
+          <line>278</line>
+          <option name="timeStamp" value="15" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/clients/clientJava/src/main/java/me/dcal/owndrive/clientjava/test/UploadFileMain.java</url>
+          <line>223</line>
+          <option name="timeStamp" value="16" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/clients/clientJava/src/main/java/me/dcal/owndrive/clientjava/client.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/clients/clientJava/src/main/java/me/dcal/owndrive/clientjava/GUIProgram.java</url>
+          <line>145</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/clients/clientJava/src/main/java/me/dcal/owndrive/clientjava/test/UploadFileMain.java</url>
+          <line>270</line>
+          <properties class="me.dcal.owndrive.clientjava.test.UploadFileMain">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/clients/clientJava/src/main/java/me/dcal/owndrive/clientjava/GUIProgram.java</url>
+          <line>220</line>
+          <properties class="me.dcal.owndrive.clientjava.GUIProgram" method="main">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

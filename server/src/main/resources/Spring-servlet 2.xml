@@ -1,0 +1,22 @@
+<?xml  version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:context="http://www.springframework.org/schema/context"
+>
+
+    <context:annotation-config />
+    <context:component-scan base-package="me.dcal.owndrive">
+    </context:component-scan>
+
+        <bean id="jspViewResolver"
+              class="org.springframework.web.servlet.view.InternalResourceViewResolver">
+        <property name="viewClass"
+                  value="org.springframework.web.servlet.view.JstlView" />
+        <property name="prefix" value="/WEB-INF/jsp/" />
+        <property name="suffix" value=".jsp" />
+        </bean>
+
+
+    <bean id="DataRepository" class="me.dcal.owndrive.database.repository.DataRepository" abstract="true"/>
+    <bean id="UserRepository" class="me.dcal.owndrive.database.repository.UserRepository" abstract="true"/>
+
+</beans>
