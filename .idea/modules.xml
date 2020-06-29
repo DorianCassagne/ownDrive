@@ -2,9 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/clients/clientJava/clientjava.iml" filepath="$PROJECT_DIR$/clients/clientJava/clientjava.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/ownDrive.iml" filepath="$PROJECT_DIR$/.idea/ownDrive.iml" />
-      <module fileurl="file://$PROJECT_DIR$/server/spring-boot-data-jpa.iml" filepath="$PROJECT_DIR$/server/spring-boot-data-jpa.iml" />
     </modules>
   </component>
 </project>
