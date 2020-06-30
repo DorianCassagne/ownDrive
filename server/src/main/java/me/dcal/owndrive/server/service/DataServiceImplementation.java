@@ -2,28 +2,35 @@ package me.dcal.owndrive.server.service;
 
 import me.dcal.owndrive.database.dto.DataDTO;
 import me.dcal.owndrive.database.dto.UserDTO;
+import me.dcal.owndrive.database.model.Data;
 import me.dcal.owndrive.database.model.User;
 import me.dcal.owndrive.database.repository.DataRepository;
 import me.dcal.owndrive.database.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.ComponentScan;
+import org.springframework.data.domain.Example;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
+import org.springframework.web.context.annotation.SessionScope;
 
 import javax.swing.*;
 import javax.transaction.Transactional;
+import java.util.List;
 import java.util.Optional;
 import java.util.concurrent.atomic.AtomicReference;
 
 @Service
 @Transactional
-@ComponentScan(basePackages ={"me.dcal.owndrive.database.repository"})
+@SessionScope
+
 public class DataServiceImplementation implements DataService {
 
     private AtomicReference<UserDTO> actualUser = new AtomicReference<>();
 
-    @Autowired
+    /*@Autowired*/
     DataRepository dataRepository;
-
     @Autowired
     UserRepository userRepository;
 
@@ -87,7 +94,7 @@ public class DataServiceImplementation implements DataService {
 
     @Override
     public boolean isConnected() {
-        return !this.actualUser.get().equals(null);
+        return this.actualUser.get() != null;
     }
 
     @Override

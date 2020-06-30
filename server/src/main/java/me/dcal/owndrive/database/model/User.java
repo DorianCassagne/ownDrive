@@ -4,13 +4,15 @@ import me.dcal.owndrive.database.dto.UserDTO;
 import org.springframework.context.annotation.ComponentScan;
 
 import javax.persistence.*;
+import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
-@Entity(name = "user")
-@Table(name="user")
+@Entity
+@Table(name = "user", schema = "project")
 
-public class User {
+
+public class User implements Serializable {
     @Id
     private String username;
     @Column
